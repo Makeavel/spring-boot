@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"  >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Cadastro</title>
+</head>
+<body>
+    <h1>Formulario de emprego</h1>
+
+    <form action="#" th:action="@{/process}" th:object="{@empregoM}" method="POST" >
+        empreza: <input type="text" th:field="{@empreza}">
+            <span th:if="${#fields.hasErrors('empreza') }"
+                  th:errors="*{empreza}"></span><br>
+         
+            titulo: <input type="text" th:field="{@titulo}">
+            <span th:if="${#fields.hasErrors('titulo') }"
+                  th:errors="*{titulo}"></span><br>
+
+
+
+        descricao: <textarea rows="3" th:field="{descricao}"></textarea>
+            <span th:if="${#fields.hasErrors('descricao') }"
+                  th:errors="*{descricao}"></span><br>
+            
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
