@@ -9,18 +9,18 @@
 <body>
     <h1>Formulario de emprego</h1>
 
-    <form action="#" th:action="@{/process}" th:object="{@empregoM}" method="POST" >
-        empreza: <input type="text" th:field="{@empreza}">
+    <form action="#" th:action="@{/process}" th:object="{empregoM}" method="POST" >
+        empreza: <input type="text" th:field="*{empreza}">
             <span th:if="${#fields.hasErrors('empreza') }"
                   th:errors="*{empreza}"></span><br>
          
-            titulo: <input type="text" th:field="{@titulo}">
+            titulo: <input type="text" th:field="*{titulo}">
             <span th:if="${#fields.hasErrors('titulo') }"
                   th:errors="*{titulo}"></span><br>
 
 
 
-        descricao: <textarea rows="3" th:field="{descricao}"></textarea>
+        descricao: <textarea rows="3" th:field="*{descricao}"></textarea>
             <span th:if="${#fields.hasErrors('descricao') }"
                   th:errors="*{descricao}"></span><br>
             
